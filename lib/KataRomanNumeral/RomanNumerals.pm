@@ -39,7 +39,7 @@ if you don't export anything, such as for a purely object-oriented module.
 
 =cut
 
-sub function1 {
+sub find_roman {
 }
 
 =head2 function2
