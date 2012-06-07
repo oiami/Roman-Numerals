@@ -40,7 +40,12 @@ if you don't export anything, such as for a purely object-oriented module.
 =cut
 
 sub find_roman {
-    return 'I';    
+    my $number = shift;
+    if ( $number < 4 ){
+        return 'I' x $number;
+    } else {
+        return 'invalid number';
+    }
 }
 
 =head2 function2
