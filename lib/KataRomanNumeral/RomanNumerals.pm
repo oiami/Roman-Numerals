@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 use POSIX;
-
+use List::Util qw[min max];
 =head1 NAME
 
 KataRomanNumeral::RomanNumerals - The great new KataRomanNumeral::RomanNumerals!
@@ -43,13 +43,14 @@ if you don't export anything, such as for a purely object-oriented module.
 my @roman_char = ('I','V','X');
 
 sub find_roman {
-    my $number = shift;
-    my $number_factor = floor(  ( $number + 1 ) / 5 );
+    my $number = shift; #14
+    my $number_factor = min(floor(( $number + 1 ) / 5), 2);  #3
      
     if ( $number < 4 ){
         return 'I' x $number;
-    } else {
-        return find_roman( 5*$number_factor - $number ).@roman_char[$number_factor].'I' x ( $number - 5*$number_factor);
+    } 
+    else {
+        return find_roman( 5 * $number_factor - $number ).@roman_char[$number_factor].find_roman( $number - 5 * $number_factor);
     }
 }
 
