@@ -40,6 +40,7 @@ if you don't export anything, such as for a purely object-oriented module.
 =cut
 
 sub find_roman {
+    return 'I';    
 }
 
 =head2 function2
