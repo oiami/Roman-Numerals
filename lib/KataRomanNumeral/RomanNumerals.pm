@@ -43,8 +43,8 @@ if you don't export anything, such as for a purely object-oriented module.
 my @roman_char = ('I','V','X');
 
 sub find_roman {
-    my $number = shift; #14
-    my $number_factor = min(floor(( $number + 1 ) / 5), 2);  #3
+    my $number = shift; 
+    my $number_factor = min(floor(( $number + 1 ) / 5), 2); 
      
     if ( $number < 4 ){
         return 'I' x $number;
