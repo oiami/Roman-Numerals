@@ -43,17 +43,31 @@ if you don't export anything, such as for a purely object-oriented module.
 my @roman_char = ('I','V','X');
 
 sub find_roman {
+    my $number = shift;
+    
+    my $temp_roman = '';
+    
+    return roman( $number % 10, 0 );   
+}
+
+sub roman {
     my $number = shift; 
+    my $position = shift;
     my $number_factor = min(floor(( $number + 1 ) / 5), 2); 
      
     if ( $number < 4 ){
         return 'I' x $number;
     } 
-    else {
-        return find_roman( 5 * $number_factor - $number ).@roman_char[$number_factor].find_roman( $number - 5 * $number_factor);
+    elsif( $number < 9 ) {
+  
+        return @roman_char[ $position ] x ( 5 - $number ).@roman_char[ $number_factor ].roman( $number - 5, $position );
+
+    }else{
+         
+        return @roman_char[ $position ] x ( 10 - $number ).@roman_char[ $number_factor ];
+
     }
 }
-
 =head2 function2
 
 =cut
