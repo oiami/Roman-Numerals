@@ -25,4 +25,11 @@ is( KataRomanNumeral::RomanNumerals::find_roman(8), "VIII", "8 -> VIII");
 
 #Test roman( 9 )
 is( KataRomanNumeral::RomanNumerals::find_roman(9), "IX", "9 -> VI");
+
+#Test roman( 10 )
+is( KataRomanNumeral::RomanNumerals::find_roman(10), "X", "10 -> X");
+
+#Test roman( 11 )
+is( KataRomanNumeral::RomanNumerals::find_roman(11), "XI", "11 -> XI");
+
 done_testing();
