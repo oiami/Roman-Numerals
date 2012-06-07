@@ -41,10 +41,17 @@ is( KataRomanNumeral::RomanNumerals::find_roman(14), "XIV", "14 -> XIV");
 #Test roman( 15 )
 is( KataRomanNumeral::RomanNumerals::find_roman(15), "XV", "15 -> XV");
 
-#Test roman( 15 )
+#Test roman( 39 )
 is( KataRomanNumeral::RomanNumerals::find_roman(39), "XXXIX", "39 -> XXXIX");
+
 
 #Test roman( 40 )
 is( KataRomanNumeral::RomanNumerals::find_roman(40), "XL", "40 -> XL");
+
+#Test roman( 56 )
+is( KataRomanNumeral::RomanNumerals::find_roman(56), "LVI", "56 -> LVI");
+
+#Test roman( 90 )
+is (KataRomanNumeral::RomanNumerals::find_roman(90), "XC", "90 -> XC");
 
 done_testing();
