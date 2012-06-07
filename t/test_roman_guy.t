@@ -9,6 +9,9 @@ BEGIN { use_ok 'KataRomanNumeral::RomanNumerals' }
 is( KataRomanNumeral::RomanNumerals::find_roman(1), "I", "1 -> I");
 
 #Test roman( 2 )
-is( KataRomanNumeral::RomanNUmerals::find_roman(2), "II", "2 -> II");
+is( KataRomanNumeral::RomanNumerals::find_roman(2), "II", "2 -> II");
+
+#Test roman( 2 )
+is( KataRomanNumeral::RomanNumerals::find_roman(4), "IV", "4 -> IV");
 
 done_testing();
