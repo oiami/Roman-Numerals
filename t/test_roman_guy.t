@@ -32,4 +32,10 @@ is( KataRomanNumeral::RomanNumerals::find_roman(10), "X", "10 -> X");
 #Test roman( 11 )
 is( KataRomanNumeral::RomanNumerals::find_roman(11), "XI", "11 -> XI");
 
+#Test roman( 12 )
+is( KataRomanNumeral::RomanNumerals::find_roman(12), "XII", "12 -> XII");
+
+#Test roman( 14 )
+is( KataRomanNumeral::RomanNumerals::find_roman(14), "XIV", "14 -> XIV");
+
 done_testing();
