@@ -3,6 +3,7 @@ package KataRomanNumeral::RomanNumerals;
 use 5.006;
 use strict;
 use warnings;
+use POSIX;
 
 =head1 NAME
 
@@ -39,12 +40,16 @@ if you don't export anything, such as for a purely object-oriented module.
 
 =cut
 
+my @roman_char = ('I','V','X');
+
 sub find_roman {
     my $number = shift;
+    my $number_factor = floor(  ( $number + 1 ) / 5 );
+     
     if ( $number < 4 ){
         return 'I' x $number;
     } else {
-        return find_roman( 5 - $number ).'V'.'I' x ( $number - 5);
+        return find_roman( 5*$number_factor - $number ).@roman_char[$number_factor].'I' x ( $number - 5*$number_factor);
     }
 }
 
