@@ -44,7 +44,7 @@ sub find_roman {
     if ( $number < 4 ){
         return 'I' x $number;
     } else {
-        return find_roman( 5 - $number ).'V';
+        return find_roman( 5 - $number ).'V'.'I' x ( $number - 5);
     }
 }
 
