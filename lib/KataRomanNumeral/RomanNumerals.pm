@@ -48,7 +48,7 @@ sub find_roman {
     my $temp_roman = '';
     
     return roman( floor( $number / 10), 2 ). roman( $number % 10, 0 );
-    #suppose number == 99 return roman(9,2).roman(9,0) 
+    #suppose number == 100 return roman(10,2).roman(0,0) 
     
        
 }
@@ -70,7 +70,7 @@ sub roman {
         
     } else {
          
-        return $roman_char[ $position ] x ( 10 - $number ).$roman_char[ $number_factor + 1 ].roman( $number - 10, $position ).roman( $number / 10, $position);
+        return $roman_char[ $position ] x ( 10 - $number ).$roman_char[ $number_factor + 1 ].roman( $number - 10, $position );
         #suppose $number == 90 , $position = 
     }
 }
