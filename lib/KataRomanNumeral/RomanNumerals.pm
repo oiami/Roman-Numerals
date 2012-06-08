@@ -58,15 +58,15 @@ sub roman {
     if ( $number == 0 ){
         return ''; 
     }elsif ( $number < 4 ){
-        return @roman_char[ $position ] x $number;
+        return $roman_char[ $position ] x $number;
     } 
     elsif( $number < 9 ) {
   
-        return @roman_char[ $position ] x ( 5 - $number ).@roman_char[ $number_factor ].roman( $number - 5, $position );
+        return $roman_char[ $position ] x ( 5 - $number ).$roman_char[ $number_factor ].roman( $number - 5, $position );
 
     }else{
          
-        return @roman_char[ $position ] x ( 10 - $number ).@roman_char[ $number_factor + 1 ];
+        return $roman_char[ $position ] x ( 10 - $number ).$roman_char[ $number_factor + 1 ];
 
     }
 }
