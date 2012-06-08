@@ -40,14 +40,17 @@ if you don't export anything, such as for a purely object-oriented module.
 
 =cut
 
-my @roman_char = ('I','V','X','L');
+my @roman_char = ('I','V','X','L','C');
 
 sub find_roman {
     my $number = shift;
     
     my $temp_roman = '';
     
-    return roman( floor( $number / 10), 2 ). roman( $number % 10, 0 );   
+    return roman( floor( $number / 10), 2 ). roman( $number % 10, 0 );
+    #suppose number == 99 return roman(9,2).roman(9,0) 
+    
+       
 }
 
 sub roman {
@@ -57,17 +60,18 @@ sub roman {
     
     if ( $number == 0 ){
         return ''; 
-    }elsif ( $number < 4 ){
+    } elsif ( $number < 4 ){
+        
         return $roman_char[ $position ] x $number;
-    } 
-    elsif( $number < 9 ) {
+    
+    } elsif ( $number < 9 ) {
   
         return $roman_char[ $position ] x ( 5 - $number ).$roman_char[ $number_factor ].roman( $number - 5, $position );
-
-    }else{
+        
+    } else {
          
-        return $roman_char[ $position ] x ( 10 - $number ).$roman_char[ $number_factor + 1 ];
-
+        return $roman_char[ $position ] x ( 10 - $number ).$roman_char[ $number_factor + 1 ].roman( $number - 10, $position ).roman( $number / 10, $position);
+        #suppose $number == 90 , $position = 
     }
 }
 =head2 function2
