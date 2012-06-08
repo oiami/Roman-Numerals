@@ -54,4 +54,18 @@ is( KataRomanNumeral::RomanNumerals::find_roman(56), "LVI", "56 -> LVI");
 #Test roman( 90 )
 is (KataRomanNumeral::RomanNumerals::find_roman(90), "XC", "90 -> XC");
 
+#Test roman( 91 )
+is (KataRomanNumeral::RomanNumerals::find_roman(91), "XCI", "91 -> XCI");
+
+#Test roman( 94 )
+is (KataRomanNumeral::RomanNumerals::find_roman(94), "XCIV", "94 -> XCIV");
+
+#Test roman( 95 )
+is (KataRomanNumeral::RomanNumerals::find_roman(95), "XCV", "95 -> XCV");
+
+#Test roman( 99 )
+is (KataRomanNumeral::RomanNumerals::find_roman(99), "XCIX", "99 -> XCIX");
+#Test roman( 100 )
+is (KataRomanNumeral::RomanNumerals::find_roman(100), "C", "100 -> C");
+
 done_testing();
